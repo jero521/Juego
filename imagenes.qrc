@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Imagenes/E_normal.png</file>
+        <file>Imagenes/E_pesado.png</file>
+        <file>Imagenes/E_rango.png</file>
+        <file>Imagenes/Pj.png</file>
+    </qresource>
+</RCC>
