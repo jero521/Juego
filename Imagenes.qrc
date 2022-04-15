@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Imagenes/E_normal.png</file>
+        <file>Imagenes/E_normal_v.png</file>
+        <file>Imagenes/E_pesado.png</file>
+        <file>Imagenes/E_pesado_v.png</file>
+        <file>Imagenes/E_rang_v.png</file>
+        <file>Imagenes/E_rango.png</file>
+        <file>Imagenes/Pj.png</file>
+        <file>Imagenes/Pj_v.png</file>
+    </qresource>
+</RCC>
