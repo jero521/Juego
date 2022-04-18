@@ -28,6 +28,8 @@ public:
 
 public slots:
     void spawn();
+    void spawn_tanque();
+    void spawn_rango();
 
 };
 

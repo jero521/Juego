@@ -6,10 +6,14 @@
 
 class Bullet: public QObject, public QGraphicsRectItem{
     Q_OBJECT
+
+int Dano=100;
 public:
     Bullet();
 
-    public slots:
+    int getDano() const;
+
+public slots:
         void move();
 
 };

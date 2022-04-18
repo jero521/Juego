@@ -1,11 +1,11 @@
-#ifndef ENEMY_H
-#define ENEMY_H
+#ifndef ENEMY_RANGO_H
+#define ENEMY_RANGO_H
 
 #include <QGraphicsRectItem>
 #include <QObject>
 #include <QGraphicsItem>
 
-class Enemy: public QObject,public QGraphicsRectItem{
+class Enemy_rango: public QObject,public QGraphicsRectItem{
     Q_OBJECT
 public:
 
@@ -13,7 +13,7 @@ int ganancia=10;
 int velocidad=5;
 int danio=100;
 public:
-Enemy(QGraphicsItem * parent = 0);
+Enemy_rango(QGraphicsItem * parent = 0);
 
 int getGanancia() const;
 
@@ -30,5 +30,4 @@ public slots:
 
 
 
-
-#endif // ENEMY_H
+#endif // ENEMY_RANGO_H

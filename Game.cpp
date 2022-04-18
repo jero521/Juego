@@ -1,25 +1,9 @@
 #include "Game.h"
 #include "Enemy.h"
+#include "Enemy_rango.h"
+#include "enemy_tanque.h"
 #include <QTimer>
 
-
-void Game::Simular()
-{
-    double ang;
-    ang=45;
-    double rad=(ang*3.14159)/180;
-    proyectil= new MovimientoPrb(80,500,30,rad);
-    scene->addItem(proyectil);
-    timer->start(5);
-}
-
-void Game::Actualizar()
-{
-    proyectil->CalcularVelocidad();
-    proyectil->CalcularPosicion();
-    proyectil->ActualizarVelocidad();
-
-}
 
 Game::Game(QWidget *parent)
 {
@@ -58,6 +42,14 @@ Game::Game(QWidget *parent)
     QTimer *timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(2000);
+
+    QTimer *timer1 = new QTimer();
+    QObject::connect(timer1,SIGNAL(timeout()),player,SLOT(spawn_tanque()));
+    timer1->start(5000);
+
+    QTimer *timer2 = new QTimer();
+    QObject::connect(timer2,SIGNAL(timeout()),player,SLOT(spawn_rango()));
+    timer2->start(9000);
 
     show();
 
