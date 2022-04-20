@@ -1,5 +1,5 @@
 #include "estructura.h"
-#include "vidas_salud.h"
+#include "health.h"
 #include "player.h"
 
 

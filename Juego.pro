@@ -10,26 +10,31 @@ CONFIG += c++11
 
 SOURCES += \
     bullet.cpp \
+    bullet_parabolico.cpp \
     enemy.cpp \
+    enemy_rango.cpp \
+    enemy_tanque.cpp \
     estructura.cpp \
     game.cpp \
+    health.cpp \
     main.cpp \
-    mainwindow.cpp \
     player.cpp \
-    vidas_salud.cpp
+    score.cpp
 
 HEADERS += \
     bullet.h \
+    bullet_parabolico.h \
     enemy.h \
+    enemy_rango.h \
+    enemy_tanque.h \
     estructura.h \
     game.h \
-    mainwindow.h \
+    health.h \
     movimientoprb.h \
     player.h \
-    vidas_salud.h
+    score.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

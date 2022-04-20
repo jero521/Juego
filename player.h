@@ -4,9 +4,10 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 #include <QGraphicsItem>
+#include <QPixmap>
 
 
-class Player: public QObject, public QGraphicsRectItem{
+class Player: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 
 int Vel=10;
@@ -25,11 +26,17 @@ public:
     void setVel(int newVel);
 
     int getMuniciones() const;
+
+
     void setMuniciones(int newMuniciones);
 
 public slots:
     void spawn();
+    void spawn_tanque();
+    void spawn_rango();
 
+private:
+    QPixmap per;
 };
 
 #endif // PLAYER_H
