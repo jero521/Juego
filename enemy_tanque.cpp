@@ -29,12 +29,13 @@ void Enemy_tanque::setVelocidad(int newVelocidad)
 }
 
 
-Enemy_tanque::Enemy_tanque(QGraphicsItem *parent)
+Enemy_tanque::Enemy_tanque(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
 
-    setPos(700,450);
+    setPos(700,400);
     // dibujamos el enemigo
-    setRect(0,0,100,150);
+    //setRect(0,0,100,150);
+    setPixmap(QPixmap(":/Imagenes/Enemigos/E_pesado.png"));
 
     // make/connect a timer to move() the enemy every so often
     QTimer * timer = new QTimer(this);
@@ -69,7 +70,7 @@ void Enemy_tanque::move()
       scene()->removeItem(this);
       delete this;
       }
-   else if(pos().x()+rect().width()<0){
+   else if(pos().x()+pixmap().width()<0){
        scene()->removeItem(this);
        delete this;
        qDebug()<<"Borrado";

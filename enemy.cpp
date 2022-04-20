@@ -27,12 +27,14 @@ void Enemy::setVelocidad(int newVelocidad)
 }
 
 
-Enemy::Enemy(QGraphicsItem *parent)
+Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
 
-    setPos(700,500);
+    //setPos(700,500);
     // dibujamos el enemigo
-    setRect(0,0,100,100);
+    //setRect(0,0,100,100);
+    setPos(700,430);
+    setPixmap(QPixmap(":/Imagenes/Enemigos/E_normal.png"));
 
     // make/connect a timer to move() the enemy every so often
     QTimer * timer = new QTimer(this);
@@ -40,6 +42,7 @@ Enemy::Enemy(QGraphicsItem *parent)
 
     // start the timer
     timer->start(50);
+    setPixmap(QPixmap(":/Imagenes/Enemigos/E_normal_v.png"));
 
 
 }
@@ -65,12 +68,12 @@ void Enemy::move()
 
     setPos(x()-getVelocidad(),y());
 
-   if(pos().x()+rect().width()<0 && game->health->getHealth()>0){
+   if(pos().x()+pixmap().width()<0 && game->health->getHealth()>0){
       game->health->decrease();
       scene()->removeItem(this);
       delete this;
       }
-   else if(pos().x()+rect().width()<0){
+   else if(pos().x()+pixmap().width()<0){
        scene()->removeItem(this);
        delete this;
        qDebug()<<"Borrado";

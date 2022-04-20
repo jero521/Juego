@@ -4,14 +4,14 @@
         <file>Imagenes/Tienda/Salud.png</file>
         <file>Imagenes/Tienda/Velocidad.png</file>
         <file>Imagenes/Ciclos/Amanecer.png</file>
-        <file>Imagenes/Enemigos/E_normal.png</file>
-        <file>Imagenes/Enemigos/E_normal_v.png</file>
-        <file>Imagenes/Enemigos/E_pesado.png</file>
         <file>Imagenes/Enemigos/E_pesado_v.png</file>
         <file>Imagenes/Enemigos/E_rang_v.png</file>
-        <file>Imagenes/Enemigos/E_rango.png</file>
         <file>Imagenes/Enemigos/Pj.png</file>
         <file>Imagenes/Enemigos/Pj_v.png</file>
+        <file>Imagenes/Enemigos/E_rango.png</file>
+        <file>Imagenes/Enemigos/E_pesado.png</file>
         <file>Imagenes/Otros/bullet.png</file>
+        <file>Imagenes/Enemigos/E_normal.png</file>
+        <file>Imagenes/Enemigos/E_normal_v.png</file>
     </qresource>
 </RCC>

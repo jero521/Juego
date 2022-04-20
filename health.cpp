@@ -18,6 +18,16 @@ void Health::decrease()
 {
     health--;
     setPlainText(QString("Health: ")+QString::number(health)); // health
+    hit = new QMediaPlayer;
+    if(health==0){
+
+    hit->setMedia(QUrl("qrc:/Sonidos/muerte.mp3"));
+    }
+    else{
+        hit->setMedia(QUrl("qrc:/Sonidos/Golpeada.mp3"));
+    }
+    hit->play();
+
 }
 
 int Health::getHealth()

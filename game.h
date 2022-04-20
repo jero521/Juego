@@ -7,7 +7,7 @@
 #include "player.h"
 #include "score.h"
 #include "health.h"
-
+#include <QMediaPlayer>
 #include <QTimer>
 
 
@@ -25,6 +25,8 @@ public:
     Score * score;
     Health * health;
     QTimer * timer;
+    QMediaPlayer * M_Fondo;
+
 
     const int width = 1200;
     const int height = 600;

@@ -2,6 +2,7 @@
 #define HEALTH_H
 
 #include <QGraphicsTextItem>
+#include <QMediaPlayer>
 
 class Health : public QGraphicsTextItem{
   public:
@@ -11,6 +12,7 @@ class Health : public QGraphicsTextItem{
 
   private:
     int health;
+    QMediaPlayer * hit;
 };
 
 

@@ -45,6 +45,8 @@ void Player::setMuniciones(int newMuniciones)
 Player::Player(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
 {
     QTimer *timer = new QTimer(this);
+    sonbala = new QMediaPlayer;
+    sonbala->setMedia(QUrl("qrc:/Sonidos/Sonido disparo.mp3"));
 
 
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
@@ -71,8 +73,11 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if(event->key()==Qt::Key_Space){
 
         Bullet * bullet = new Bullet();
-        bullet->setPos(x(),y());
+        bullet->setPos(x()+145,y()+66);
         scene()->addItem(bullet);
+
+        sonbala->play();
+
 
     }
     else if(event->key()==Qt::Key_X){

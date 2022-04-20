@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QGraphicsItem>
 
-class Enemy: public QObject,public QGraphicsRectItem{
+class Enemy: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 public:
 

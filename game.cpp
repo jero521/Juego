@@ -4,6 +4,7 @@
 #include "enemy_tanque.h"
 #include <QTimer>
 
+
 Game::Game(QWidget *parent)
 {
     // crear la scena
@@ -50,6 +51,14 @@ Game::Game(QWidget *parent)
     QTimer *timer2 = new QTimer();
     QObject::connect(timer2,SIGNAL(timeout()),player,SLOT(spawn_rango()));
     timer2->start(9000);
+
+    //Musica de fondo
+
+    M_Fondo = new QMediaPlayer();
+    M_Fondo->setMedia(QUrl("qrc:/Sonidos/musica de fondo.mp3"));
+    M_Fondo->play();
+
+
 
     show();
 

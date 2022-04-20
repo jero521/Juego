@@ -25,7 +25,9 @@ Bullet::Bullet()
 {
     //dibujar la bala
     //setRect(100,50,50,10);
+    //setPos(700,430);
     setPixmap(QPixmap(":/Imagenes/Otros/bullet.png"));
+
 
     QTimer *timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));

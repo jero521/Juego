@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QGraphicsItem>
 #include <QPixmap>
+#include <QMediaPlayer>
 
 
 class Player: public QObject, public QGraphicsPixmapItem{
@@ -36,7 +37,9 @@ public slots:
     void spawn_rango();
 
 private:
-    QPixmap per;
+    QMediaPlayer * sonbala;
+
+    //QPixmap per;
 };
 
 #endif // PLAYER_H

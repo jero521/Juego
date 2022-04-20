@@ -31,11 +31,12 @@ void Enemy_rango::setVelocidad(int newVelocidad)
 Enemy_rango::Enemy_rango(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
 
-    setPos(700,520);
+    //setPos(700,520);
     // dibujamos el enemigo
    // setRect(0,0,80,80);
+    setPos(700,430);
     setPixmap(QPixmap(":/Imagenes/Enemigos/E_rango.png"));
-    setPos(400,430);
+
 
     // make/connect a timer to move() the enemy every so often
     QTimer * timer = new QTimer(this);
