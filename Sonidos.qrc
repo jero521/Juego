@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Sonidos/Golpeada.mp3</file>
+        <file>Sonidos/muerte.mp3</file>
+        <file>Sonidos/musica de fondo.mp3</file>
+        <file>Sonidos/Sonido disparo.mp3</file>
+        <file>Sonidos/bomba.mp3</file>
+        <file>Sonidos/game over.mp3</file>
+    </qresource>
+</RCC>

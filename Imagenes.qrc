@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Imagenes/E_normal.png</file>
+        <file>Imagenes/E_normal_v.png</file>
+        <file>Imagenes/E_pesado.png</file>
+        <file>Imagenes/E_pesado_v.png</file>
+        <file>Imagenes/E_rang_v.png</file>
+        <file>Imagenes/E_rango.png</file>
+        <file>Imagenes/Pj.png</file>
+        <file>Imagenes/Pj_v.png</file>
+        <file>Imagenes/Amanecer.png</file>
+        <file>Imagenes/bullet.png</file>
+        <file>Imagenes/Anochecer.png</file>
+        <file>Imagenes/Regalo.png</file>
+        <file>Imagenes/Cannon_Ball.png</file>
+        <file>Imagenes/Bola de fuego.png</file>
+        <file>Imagenes/Noche.png</file>
+    </qresource>
+</RCC>
