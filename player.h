@@ -4,10 +4,13 @@
 #include <QPixmap>
 #include <QObject>
 #include <QGraphicsItem>
+#include <QMediaPlayer>
 
 
 class Player: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
+
+
 
 int Vel=10;
 int Dinero=50;
@@ -35,6 +38,9 @@ public slots:
     void spawn1_tanque();
     void spawn1_rango();
     void spawn_regalo();
+    void spawn_pro();
+private:
+    QMediaPlayer * sounball;
 
 };
 

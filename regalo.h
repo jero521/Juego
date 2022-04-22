@@ -3,7 +3,7 @@
 #include <QPixmap>
 #include <QObject>
 #include <QGraphicsItem>
-
+#include <math.h>
 
 class Regalo: public QObject,public QGraphicsPixmapItem{
     Q_OBJECT

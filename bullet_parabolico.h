@@ -2,13 +2,13 @@
 #define BULLET_PARABOLICO_H
 
 
-#include <QGraphicsRectItem>
+#include <QPixmap>
 #include <QObject>
 #include <math.h>
+#include <QGraphicsItem>
+#include <QMediaPlayer>
 
-
-
-class Bullet_parabolico: public QObject, public QGraphicsRectItem{
+class Bullet_parabolico: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 
     double posx;
@@ -28,6 +28,8 @@ public:
 
 public slots:
         void move();
+private:
+        QMediaPlayer * sounbomba;
 
 };
 #endif // BULLET_PARABOLICO_H

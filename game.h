@@ -11,6 +11,7 @@
 #include "Balas.h"
 #include "bombas.h"
 #include <QTimer>
+#include <QMediaPlayer>
 
 
 class Game: public QGraphicsView{
@@ -30,6 +31,7 @@ public:
     Balas * balas;
     Bombas * bombas;
     QTimer * timer;
+    QMediaPlayer * M_Fondo;
 
 public slots:
     void start();

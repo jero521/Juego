@@ -27,7 +27,10 @@ Game::Game(QWidget *parent)
 void Game::menu()
 {
     scene->clear();
-    setBackgroundBrush(QBrush(QImage(":/Imagenes/Amanecer.png")));
+    setBackgroundBrush(QBrush(QImage(":/Imagenes/Anochecer.png")));
+    M_Fondo = new QMediaPlayer();
+    M_Fondo->setMedia(QUrl("qrc:/Sonidos/musica de fondo.mp3"));
+    M_Fondo->play();
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Survive 24 hours"));
     QFont titleFont("comic sans",50);
@@ -99,7 +102,7 @@ void Game::guardar()
 void Game::start()
 {
 scene->clear();
-scene->setBackgroundBrush(QBrush(QImage(":/Imagenes/Amanecer.png")));
+setBackgroundBrush(QBrush(QImage(":/Imagenes/Amanecer.png")));
 // crear el jugador
 
 Button * quitButton = new Button(QString("Guardar"));
@@ -141,11 +144,11 @@ scene->addItem(bombas);
 
 QTimer *timer = new QTimer();
 QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
-timer->start(1500);
+timer->start(3000);
 
 QTimer *timer1 = new QTimer();
 QObject::connect(timer1,SIGNAL(timeout()),player,SLOT(spawn_tanque()));
-timer1->start(3000);
+timer1->start(4000);
 
 QTimer *timer2 = new QTimer();
 QObject::connect(timer2,SIGNAL(timeout()),player,SLOT(spawn_rango()));
@@ -153,7 +156,7 @@ timer2->start(5000);
 
 QTimer *timer3 = new QTimer();
 QObject::connect(timer3,SIGNAL(timeout()),player,SLOT(spawn1()));
-timer3->start(2000);
+timer3->start(1500);
 
 QTimer *timer4 = new QTimer();
 QObject::connect(timer4,SIGNAL(timeout()),player,SLOT(spawn1_tanque()));
@@ -161,9 +164,13 @@ timer4->start(2000);
 
 QTimer *timer5 = new QTimer();
 QObject::connect(timer5,SIGNAL(timeout()),player,SLOT(spawn1_rango()));
-timer5->start(3000);
+timer5->start(5000);
 
 QTimer *timer6 = new QTimer();
 QObject::connect(timer6,SIGNAL(timeout()),player,SLOT(spawn_regalo()));
-timer6->start(1000);
+timer6->start(100000);
+
+QTimer *timer7 = new QTimer();
+QObject::connect(timer7,SIGNAL(timeout()),player,SLOT(spawn_pro()));
+timer7->start(9000);
 }

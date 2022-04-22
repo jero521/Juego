@@ -23,11 +23,13 @@ int Bullet_parabolico::getDano() const
 Bullet_parabolico::Bullet_parabolico()
 {
     //dibujar la bala
-    setRect(x(),y(),20,20);
+    setPixmap(QPixmap(":/Imagenes/Cannon_Ball.png"));
 
     QTimer *timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(4);
+    sounbomba = new QMediaPlayer();
+    sounbomba->setMedia(QUrl("qrc:/Sonidos/bomba.mp3"));
 }
 void Bullet_parabolico::CalcularPosicion()
 {
@@ -64,6 +66,7 @@ void Bullet_parabolico::move()
                game->score->increase(10);
                delete colliding_items[i];
                delete this;
+               sounbomba->play();
                return;
         }
 
@@ -71,6 +74,7 @@ void Bullet_parabolico::move()
               game->score->increase(20);
               delete colliding_items[i];
               delete this;
+              sounbomba->play();
               return;
         }
 
@@ -78,8 +82,10 @@ void Bullet_parabolico::move()
                 game->score->increase(50);
                 delete colliding_items[i];
                 delete this;
+                sounbomba->play();
                 return;
           }
+
 
         }
 
@@ -94,6 +100,7 @@ void Bullet_parabolico::move()
 
         scene()->removeItem(this);
         delete this;
+        sounbomba->play();
         qDebug()<<"Borrado Ballet";
 
     }

@@ -17,12 +17,25 @@ Health::Health(QGraphicsItem *parent)
 void Health::decrease()
 {
     health--;
+    soungolpe = new QMediaPlayer();
+    if(health==0){
+        soungolpe->setMedia(QUrl("qrc:/Sonidos/muerte.mp3"));
+    }
+    else {
+        soungolpe->setMedia(QUrl("qrc:/Sonidos/Golpeada.mp3"));
+    }
+    soungolpe->play();
     setPlainText(QString("VIDAS: ")+QString::number(health)); // health
 }
 
 int Health::getHealth()
 {
-        return health;
+    return health;
+}
+
+void Health::setHealth(int newHealth)
+{
+    health = newHealth;
 }
 void Health::increase()
 {

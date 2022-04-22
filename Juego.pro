@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui\
+multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,6 +16,7 @@ SOURCES += \
     bullet_parabolico.cpp \
     button.cpp \
     enemy.cpp \
+    enemy_pro.cpp \
     enemy_rango.cpp \
     enemy_tanque.cpp \
     estructura.cpp \
@@ -32,6 +34,7 @@ HEADERS += \
     bullet_parabolico.h \
     button.h \
     enemy.h \
+    enemy_pro.h \
     enemy_rango.h \
     enemy_tanque.h \
     estructura.h \
@@ -50,6 +53,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Imagenes.qrc
+    Imagenes.qrc \
+    Sonidos.qrc
 
 DISTFILES +=

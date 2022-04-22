@@ -6,7 +6,7 @@
 #include <player.h>
 #include <QList>
 #include <QtDebug>
-
+#include <QtMath>
 extern Game * game;
 
 
@@ -25,9 +25,9 @@ void Regalo::setVelocidad(int newVelocidad)
 Regalo::Regalo(QGraphicsItem *parent)
 {
 
-    setPos(500,370);
+    setPos(800,500);
     // dibujamos el enemigo
-    setPixmap(QPixmap(":/Imagenes/Pj.png"));
+    setPixmap(QPixmap(":/Imagenes/Regalo.png"));
 
     // make/connect a timer to move() the enemy every so often
     QTimer * timer = new QTimer(this);
@@ -49,10 +49,24 @@ void Regalo::move()
 
             }
         }
-
-    setPos(x()-getVelocidad(),y());
-    if(pos().x()+pixmap().width()<0 ){
-      scene()->removeItem(this);
-      delete this;
-      }
+if(y()>300 && y()<600){
+    setPos(x(),y()-getVelocidad());
 }
+if(y()>300 && y()<600){
+    setPos(x(),y()+getVelocidad());
+}
+
+
+
+}
+/*
+  setPos(x()-getVelocidad(),y());
+static float cont =0;
+float posX = 100*100*qCos(qDegreesToRadians(cont));
+cont += 5.0f;
+
+float posY = 100*100*qSin(qDegreesToRadians(cont));
+cont += 5.0f;
+ qDebug()<<"posx: "<<posX<<" posy: "<<posY<<'\n';
+setPos(x()+posX,y()+posY);
+*/
