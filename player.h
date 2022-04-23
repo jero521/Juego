@@ -41,6 +41,7 @@ public slots:
     void spawn_pro();
 private:
     QMediaPlayer * sounball;
+    QMediaPlayer * sounfeo;
 
 };
 

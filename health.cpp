@@ -27,10 +27,12 @@ void Health::decrease()
         game->M_Fondo->setMedia(QUrl("qrc:/Sonidos/game over.mp3"));
         game->M_Fondo->play();
         QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("GAME OVER"));
-        QFont titleFont("comic sans",50);
+        QFont titleFont("comic sans",100);
         titleText->setFont(titleFont);
-
-
+        int txPos = 230;
+        int tyPos = 200;
+        titleText->setPos(txPos,tyPos);
+        game->scene->addItem(titleText);
     }
     else {
         soungolpe->setMedia(QUrl("qrc:/Sonidos/Golpeada.mp3"));

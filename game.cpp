@@ -34,19 +34,37 @@ void Game::menu()
     M_Fondo->play();
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Survive 24 hours"));
-    QFont titleFont("comic sans",80);
+    QFont titleFont("comic sans",70);
     titleText->setFont(titleFont);
 
+    QGraphicsTextItem * explic = new QGraphicsTextItem(QString("Tecla Up : Teletransportarce adelante  --> evitar fuego"));
+    QFont titlFont("comic sans",20);
+    explic->setFont(titlFont);
+
+    QGraphicsTextItem * explica = new QGraphicsTextItem(QString("Tecla V --> +vida::Tecla B --> +balas::Tecla N --> +bombas"));
+    QFont titFont("comic sans",20);
+    explica->setFont(titFont);
+
     int txPos = this->width()/2 - titleText->boundingRect().width()/2;
-    int tyPos = 150;
+    int tyPos = 100;
     titleText->setPos(txPos,tyPos);
+
+    int pxPos = this->width()/2 - explic->boundingRect().width()/2;
+    int pyPos = 200;
+
+    int vxPos = this->width()/2 - explica->boundingRect().width()/2;
+    int vyPos = 250;
+    explic->setPos(pxPos,pyPos);
+    explica->setPos(vxPos,vyPos);
     scene->addItem(titleText);
+    scene->addItem(explic);
+    scene->addItem(explica);
 
     // crear boton play
 
     Button * playButton = new Button(QString("Play"));
     int bxPos = this->width()/2 -playButton->boundingRect().width()/2;
-    int byPos = 300;
+    int byPos = 320;
     playButton->setPos(bxPos,byPos);
     connect(playButton,SIGNAL(clicked()),this,SLOT(start()));
     scene->addItem(playButton);
@@ -55,14 +73,14 @@ void Game::menu()
 
     Button * quitButton = new Button(QString("Exit"));
     int qxPos = this->width()/2 -quitButton->boundingRect().width()/2;
-    int qyPos = 375;
+    int qyPos = 470;
     quitButton->setPos(qxPos,qyPos);
     connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(quitButton);
 
     Button * RetryButton = new Button(QString("Retry"));
     int rxPos = this->width()/2 -RetryButton->boundingRect().width()/2;
-    int ryPos = 450;
+    int ryPos = 395;
     RetryButton->setPos(rxPos,ryPos);
     connect(RetryButton,SIGNAL(clicked()),this,SLOT(retry()));
     scene->addItem(RetryButton);
@@ -85,7 +103,15 @@ void Game::retry()
     qDebug()<<datico<<" "<<datico1<<" "<<datico2<<" "<<datico3<<" "<<datico4;
 
     scene->clear();
+    if(datico2>=0 && datico2<40){
     setBackgroundBrush(QBrush(QImage(":/Imagenes/Amanecer.png")));
+    }
+   if(datico2>=40 && datico2<200){
+    setBackgroundBrush(QBrush(QImage(":/Imagenes/Anochecer.png")));
+    }
+   if(datico2>=200 && datico2<400){
+    setBackgroundBrush(QBrush(QImage(":/Imagenes/Noche.png")));
+    }
     // crear el jugador
 
     Button * quitButton = new Button(QString("Exit"));
@@ -233,7 +259,7 @@ timer5->start(5000);
 
 QTimer *timer6 = new QTimer();
 QObject::connect(timer6,SIGNAL(timeout()),player,SLOT(spawn_regalo()));
-timer6->start(60000);
+timer6->start(6000);
 
 QTimer *timer7 = new QTimer();
 QObject::connect(timer7,SIGNAL(timeout()),player,SLOT(spawn_pro()));

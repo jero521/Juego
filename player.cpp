@@ -55,7 +55,8 @@ Player::Player(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
     timer1->start(100);
     sounball = new QMediaPlayer();
     sounball->setMedia(QUrl("qrc:/Sonidos/Sonido disparo.mp3"));
-
+    sounfeo = new QMediaPlayer();
+    sounfeo->setMedia(QUrl("qrc:/Sonidos/feo.mp3"));
 
 }
 
@@ -215,6 +216,10 @@ void Player::spawn_rango()
 void Player::spawn1()
 {
 
+     if (game->score->getMuertos()>=200 && game->score->getMuertos()<210){
+         sounfeo->play();
+     }
+
      if(game->score->getMuertos()>=200 && game->score->getMuertos()<400){
         game->setBackgroundBrush(QBrush(QImage(":/Imagenes/Noche.png")));
         Enemy * enemy = new Enemy();
@@ -249,6 +254,7 @@ void Player::spawn1_rango()
 {
 
      if(game->score->getMuertos()>=250 && game->score->getMuertos()<400){
+        game->M_Fondo->play();
         Enemy_rango * enemy_rango = new Enemy_rango();
         scene()->addItem(enemy_rango);
         Enemy_rango * enemy_rango1 = new Enemy_rango();
@@ -262,13 +268,22 @@ void Player::spawn1_rango()
 
 void Player::spawn_regalo()
 {
+    if(game->score->getMuertos()>=0 && game->score->getMuertos()<400){
     Regalo * regalo = new Regalo();
     scene()->addItem(regalo);
+    }
 }
 
 void Player::spawn_pro()
 {
+    if(game->score->getMuertos()>=0 && game->score->getMuertos()<400){
     Enemy_pro * enemy_pro = new Enemy_pro();
     scene()->addItem(enemy_pro);
+    }
+    if(game->score->getMuertos()>=400){
+        game->setBackgroundBrush(QBrush(QImage(":/Imagenes/Amanecer.png")));
+        game->M_Fondo->setMedia(QUrl("qrc:/Sonidos/final.mp3"));
+        game->M_Fondo->play();
+    }
 }
 

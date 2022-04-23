@@ -6,5 +6,7 @@
         <file>Sonidos/Sonido disparo.mp3</file>
         <file>Sonidos/bomba.mp3</file>
         <file>Sonidos/game over.mp3</file>
+        <file>Sonidos/final.mp3</file>
+        <file>Sonidos/feo.mp3</file>
     </qresource>
 </RCC>

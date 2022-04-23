@@ -7,6 +7,7 @@
 #include <enemy_tanque.h>
 #include <enemy_rango.h>
 #include <game.h>
+#include <player.h>
 
 #define delta 0.03
 #define g 15.8
@@ -59,7 +60,7 @@ void Bullet_parabolico::move()
 
     for(int i = 0, n=colliding_items.size();i<n;++i){
 
-        if(typeid(*(colliding_items[i]))==typeid (Enemy) || typeid(*(colliding_items[i]))==typeid (Enemy_tanque) || typeid(*(colliding_items[i]))==typeid (Enemy_rango)){
+        if(typeid(*(colliding_items[i]))==typeid (Enemy) || typeid(*(colliding_items[i]))==typeid (Enemy_tanque) || typeid(*(colliding_items[i]))==typeid (Enemy_rango) || typeid ( *(colliding_items[i]))==typeid (Player)){
 
 
             if(typeid(*(colliding_items[i]))==typeid (Enemy)){
@@ -83,6 +84,16 @@ void Bullet_parabolico::move()
                 delete colliding_items[i];
                 delete this;
                 sounbomba->play();
+                return;
+          }
+            else if(typeid(*(colliding_items[i]))==typeid (Player)){
+                game->health->decrease();
+                delete this;
+                sounbomba->play();
+                if(game->health->getHealth()<0){
+                    delete colliding_items[i];
+                }
+
                 return;
           }
 
